@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>2D Fluid Simulation using LBM in WebGPU</title>
+    <meta name="description" content="A simple 2D fluid simulation using the Lattice Boltzmann Method (LBM) in WebGPU.">
+    <meta name="sort" content="2025-04-12">
+</head>
+
+<body>
+    <article>
+        <p>Just a quick example of 2D Lattice Boltzmann Method (LBM) fluid simulation implemented in WebGPU. At time of writing support for WebGPU is limited to Chromium-based browsers, with support on mobile depending on the device.</p>
+        <p>Click to add density. Moving the mouse adds a little velocity.</p>
+
+        <h2>Demo</h2>
+        <noscript>
+            <style>
+            .requires-script {
+                display: none;
+            }
+            </style>
+            <p class="warning">Javascript is disabled or unavailable in your browser so the demo can't be shown.</p>
+        </noscript>
+
+        <button id="reset" class="requires-script">
+            Reset
+        </button>
+        <div class="requires-script viscosity-control">
+            <label for="viscosity-slider">Viscosity: </label>
+            <input type="range" id="viscosity-slider" min="0.01" max="2.0" step="0.001" value="0.10">
+            <span id="viscosity-value">0.02</span>
+        </div>
+        <div class="requires-script">
+            <canvas class="interactive" id="gfx" width="500" height="500"></canvas>
+        </div>
+
+        <p class="download">
+            <a href="https://github.com/Anatta336/samdriver-xyz/tree/main/public/article-data/lbm-fluid">The source code for this demo is available</a>. It was put together pretty quickly, so no guarantees about correctness.
+        </p>
+
+        <script type="module" src="/src/main.ts"></script>
+    </article>
+</body>
+</html>
